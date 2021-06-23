@@ -6,26 +6,39 @@
 /*   By: romanbtt <marvin@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 14:22:55 by romanbtt          #+#    #+#             */
-/*   Updated: 2021/06/23 15:38:04 by romanbtt         ###   ########.fr       */
+/*   Updated: 2021/06/23 17:12:52 by romanbtt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static void	routine_eat(t_philo *philosopher)
+//int min(int first, int second)
+//{
+//	if (first < second)
+//		return (first);
+//	return (second);
+//}
+//
+//int max(int first, int second)
+//{
+//	if (first > second)
+//		return (first);
+//	return (second);
+//}
+
+static void	routine_eat(t_philo *philo)
 {
-	take_fork(philosopher, philosopher->right_fork);
-	take_fork(philosopher, philosopher->left_fork);
-	pthread_mutex_lock(&philosopher->is_eating);
-	philosopher->eat_count++;
-	philosopher->time_last_meal = get_time();
-	philosopher->time_out = philosopher->time_last_meal
-		+ philosopher->setting->time_to_die;
-	print_action(philosopher, EATING);
-	usleep(philosopher->setting->time_to_eat * 1000);
-	pthread_mutex_unlock(&philosopher->is_eating);
-	put_fork_down(philosopher, philosopher->right_fork);
-	put_fork_down(philosopher, philosopher->left_fork);
+	take_fork(philo, philo->right_fork);
+	take_fork(philo, philo->left_fork);
+	pthread_mutex_lock(&philo->is_eating);
+	philo->eat_count++;
+	philo->time_last_meal = get_time();
+	philo->time_out = philo->time_last_meal + philo->setting->time_to_die;
+	print_action(philo, EATING);
+	usleep(philo->setting->time_to_eat * 1000);
+	pthread_mutex_unlock(&philo->is_eating);
+	put_fork_down(philo, philo->left_fork);
+	put_fork_down(philo, philo->right_fork);
 }
 
 static void	routine_sleep(t_philo *philosopher)
