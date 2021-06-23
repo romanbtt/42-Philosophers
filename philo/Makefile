@@ -1,7 +1,7 @@
 NAME =		philo
 
 CC =		clang
-CFLAGS =	-Wall -Wextra -Werror -O3
+CFLAGS =	-Wall -Wextra -Werror
 
 INCLUDES =	-pthread -I ./includes 
 

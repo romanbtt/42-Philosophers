@@ -6,7 +6,7 @@
 /*   By: romanbtt <marvin@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 14:59:14 by romanbtt          #+#    #+#             */
-/*   Updated: 2021/06/23 16:40:46 by romanbtt         ###   ########.fr       */
+/*   Updated: 2021/06/23 16:51:21 by romanbtt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,6 @@ void	*monitor(void *parameter)
 		if (monitor_philo_die(philo) == true)
 			return ((void *)0);
 		pthread_mutex_unlock(&philo->is_eating);
-		usleep(10);
+		usleep(1);
 	}
 }
