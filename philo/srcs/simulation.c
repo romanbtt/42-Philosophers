@@ -6,7 +6,7 @@
 /*   By: romanbtt <marvin@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:03:01 by romanbtt          #+#    #+#             */
-/*   Updated: 2021/06/23 16:51:35 by romanbtt         ###   ########.fr       */
+/*   Updated: 2021/06/23 16:59:23 by romanbtt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ bool	start_simulation(t_philo *philos, t_simul *simulation)
 		if (pthread_create(&threads[i], NULL, &routines, &philos[i]) != 0)
 			return (error(ERR_PTHREAD_CREATE));
 		i++;
-		usleep(1);
 	}
 	if (join_threads(threads, simulation->number_of_philosophers) == false)
 		return (false);
