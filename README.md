@@ -49,3 +49,11 @@ with the philosopher number and timestamp_in_ms the current timestamp in millise
 ◦ timestamp_in_ms X is sleeping<br/>
 ◦ timestamp_in_ms X is thinking<br/>
 ◦ timestamp_in_ms X died<br/>
+- The status printed should not be scrambled or intertwined with another philosopher’s status.
+- You can’t have more than 10 ms between the death of a philosopher and when it
+will print its death.
+- One fork between each philosopher, therefore if they are multiple philosophers, there
+will be a fork at the right and the left of each philosopher.
+- To avoid philosophers duplicating forks, you should protect the forks state with a
+mutex for each of them
+- Each philosopher should be a thread.
