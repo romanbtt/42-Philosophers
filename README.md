@@ -43,10 +43,9 @@ of a philosopher.
 Any other philosopher with the number N is seated between philosopher N - 1 and
 philosopher N + 1.
 - Any change of status of a philosopher must be written as follows (with X replaced
-with the philosopher number and timestamp_in_ms the current timestamp in milliseconds) :
-◦ timestamp_in_ms X has taken a fork
-◦ timestamp_in_ms X is eating
-◦ timestamp_in_ms X is sleeping
-◦ timestamp_in_ms X is thinking
-◦ timestamp_in_ms X died
-
+with the philosopher number and timestamp_in_ms the current timestamp in milliseconds) :<br/>
+◦ timestamp_in_ms X has taken a fork<br/>
+◦ timestamp_in_ms X is eating<br/>
+◦ timestamp_in_ms X is sleeping<br/>
+◦ timestamp_in_ms X is thinking<br/>
+◦ timestamp_in_ms X died<br/>
